@@ -8,7 +8,9 @@ echo 'N3LK:0789' | sudo chpasswd
 sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
 #安装谷歌远程桌面
 apt-get update
-dpkg --install chrome-remote-desktop_current_amd64.deb
+apt install gdebi
+wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
+apt gdebi chrome-remote-desktop_current_amd64.deb
 apt install --assume-yes --fix-broken
 #设置环境变量，非用户输入交互方式
 DEBIAN_FRONTEND=noninteractive \
@@ -27,12 +29,13 @@ systemctl disable lightdm.service
 #sudo apt-get install lxde-core
 #sudo apt install --assume-yes xscreensaver
 #sudo systemctl disable lightdm.service
+#sudo apt install gdebi
 #wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-#sudo dpkg --install google-chrome-stable_current_amd64.deb
+#sudo gdebi google-chrome-stable_current_amd64.deb
 #sudo apt install --assume-yes --fix-broken
 
 #安装谷歌浏览器
-dpkg --install google-chrome-stable_current_amd64.deb
+apt gdebi  google-chrome-stable_current_amd64.deb
 apt install --assume-yes --fix-broken
 #安装文件管理器和文件编辑器
 apt install nautilus nano -y 
