@@ -10,7 +10,7 @@ sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
 apt-get update
 apt install gdebi
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
-apt gdebi chrome-remote-desktop_current_amd64.deb
+gdebi chrome-remote-desktop_current_amd64.deb
 apt install --assume-yes --fix-broken
 #设置环境变量，非用户输入交互方式
 DEBIAN_FRONTEND=noninteractive \
